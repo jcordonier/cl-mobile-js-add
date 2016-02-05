@@ -4,29 +4,23 @@ function check(ifNum){
   return num;
 }
 
-
 var num1 = prompt("Enter a number please.");
 
-while(num1check = false){
-  if(check(num1) == true){
-    var num1 = prompt("Enter a valid number please.")
-  }
+// Remember scope: We define a variable before we can use it
+var num1check = check(num1);
 
-  else{
-    var num1check = true;
-  }
+// Remember comparisons: '=' means assignment; '==' means check for equality
+while(num1check == true){
+  var num1 = prompt("Enter a valid number please.")
+  num1check = check(num1);
 }
 
 var num2 = prompt("Enter another number.");
+var num2check = check(num2);
 
-while(num2check = false){
-  if(check(num2) == true){
-    var num2 = prompt("Enter a valid number please.")
-  }
-
-  else{
-    var num2check = true;
-  }
+while(num2check == true){
+  num2 = prompt("Enter another number.");
+  num2check = check(num2);
 }
 
 var Number1 = Number(num1);
